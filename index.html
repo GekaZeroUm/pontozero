@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ponto Zero | Todo afiliado começa aqui</title>
+    
+    <!-- Tailwind CSS (via CDN para simplicidade) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'pz-black': '#050505',
+              'pz-dark': '#0a0a0a',
+              'pz-gray': '#1a1a1a',
+              'pz-silver': '#e5e5e5',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: #e5e5e5;
+      }
+      /* Ajuste para garantir que o scroll pare antes do cabeçalho fixo */
+      section {
+        scroll-margin-top: 5rem;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="selection:bg-white selection:text-black font-sans">
+
+    <!-- HEADER -->
+    <nav class="fixed w-full z-50 top-0 bg-pz-black/80 backdrop-blur-xl border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <a href="#" class="text-2xl font-black tracking-tighter text-white">
+                PONTO<span class="text-zinc-600">ZERO</span>.
+              </a>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-center space-x-8">
+              <a href="#sobre" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Sobre</a>
+              <a href="#servicos" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Serviços</a>
+              <a href="#portfolio" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Projetos</a>
+              <a href="#investimento" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Começar</a>
+            </div>
+          </div>
+          <div class="-mr-2 flex md:hidden">
+            <button
+              id="mobile-menu-btn"
+              class="inline-flex items-center justify-center p-2 rounded-md text-zinc-400 hover:text-white hover:bg-zinc-800 focus:outline-none"
+            >
+              <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-pz-black border-b border-zinc-800">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="#sobre" class="mobile-link text-zinc-300 hover:text-white block px-3 py-4 text-base font-medium border-b border-zinc-900 last:border-0">Sobre</a>
+          <a href="#servicos" class="mobile-link text-zinc-300 hover:text-white block px-3 py-4 text-base font-medium border-b border-zinc-900 last:border-0">Serviços</a>
+          <a href="#portfolio" class="mobile-link text-zinc-300 hover:text-white block px-3 py-4 text-base font-medium border-b border-zinc-900 last:border-0">Projetos</a>
+          <a href="#investimento" class="mobile-link text-zinc-300 hover:text-white block px-3 py-4 text-base font-medium border-b border-zinc-900 last:border-0">Começar</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[90vh] flex items-center bg-pz-black border-b border-white/5 overflow-hidden">
+      <!-- Abstract Background -->
+      <div class="absolute inset-0 w-full h-full opacity-30 pointer-events-none">
+        <div class="absolute right-0 top-0 w-[500px] h-[500px] bg-gradient-to-b from-zinc-800 to-transparent rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute left-0 bottom-0 w-[500px] h-[500px] bg-gradient-to-t from-zinc-900 to-transparent rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2"></div>
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="max-w-4xl">
+          <div class="inline-block mb-6">
+            <span class="text-zinc-500 text-sm font-medium tracking-[0.2em] uppercase border-b border-zinc-800 pb-1">
+              Estúdio Digital para Iniciantes
+            </span>
+          </div>
+          
+          <h1 class="text-5xl md:text-8xl font-black text-white tracking-tighter mb-8 leading-[0.9]">
+            Sua estrutura <br />
+            <span class="text-zinc-600">profissional.</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-zinc-400 max-w-2xl leading-relaxed font-light">
+            A <strong class="text-white font-semibold">Ponto Zero</strong> é especializada em criar a infraestrutura digital que todo afiliado precisa para começar. Design, copy e conversão em um único lugar.
+          </p>
+
+          <div class="mt-12 flex items-center gap-6">
+            <a href="#sobre" class="text-white text-sm font-bold uppercase tracking-widest hover:text-zinc-400 transition-colors flex items-center gap-2 group">
+              Conheça a Agência 
+              <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="sobre" class="py-24 bg-pz-black relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <h2 class="text-4xl font-bold text-white mb-8 tracking-tight">
+              O "Ponto Zero" é onde tudo começa. Mas poucos começam certo.
+            </h2>
+            <div class="space-y-6 text-lg text-zinc-400 font-light leading-relaxed">
+              <p>
+                O mercado digital amadureceu. O tempo de vender com páginas amadoras, feitas de qualquer jeito, acabou. Hoje, a confiança é a moeda mais valiosa da internet.
+              </p>
+              <p>
+                Criamos a <strong class="text-white">Ponto Zero</strong> ao perceber uma lacuna no mercado: grandes agências cobram milhares de reais por uma Landing Page, e ferramentas "faça você mesmo" entregam resultados genéricos que não convertem.
+              </p>
+              <p>
+                Nossa missão é democratizar o design profissional. Entregamos para o iniciante (afiliado, produtor ou pequeno negócio) a mesma qualidade visual dos grandes players, por um valor acessível.
+              </p>
+            </div>
+          </div>
+          
+          <div class="relative">
+            <div class="absolute -inset-4 border border-zinc-800 rounded-none z-0 pointer-events-none"></div>
+            <div class="bg-zinc-900/30 p-8 relative z-10 backdrop-blur-sm border border-white/5">
+              <div class="flex flex-col gap-8">
+                <div>
+                  <h3 class="text-white font-bold text-xl mb-2">Para quem é?</h3>
+                  <p class="text-zinc-500 text-sm">Afiliados iniciantes, dropshippers e prestadores de serviço que precisam de uma página de vendas para rodar tráfego pago.</p>
+                </div>
+                <div class="w-full h-px bg-zinc-800"></div>
+                <div>
+                  <h3 class="text-white font-bold text-xl mb-2">Nosso DNA</h3>
+                  <p class="text-zinc-500 text-sm">Minimalismo agressivo. Acreditamos que o design deve ser invisível: o cliente não deve notar a página, ele deve desejar o produto.</p>
+                </div>
+                <div class="w-full h-px bg-zinc-800"></div>
+                <div>
+                  <h3 class="text-white font-bold text-xl mb-2">Metodologia</h3>
+                  <p class="text-zinc-500 text-sm">Não usamos modelos prontos e repetitivos. Analisamos seu nicho, seu produto e criamos a estrutura ideal para vender.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicos" class="py-24 bg-pz-dark border-y border-zinc-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16 md:flex md:justify-between md:items-end">
+          <div class="max-w-2xl">
+            <h2 class="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-4">O que fazemos</h2>
+            <h3 class="text-3xl md:text-5xl font-black text-white">Design estratégico para performance.</h3>
+          </div>
+          <div class="mt-6 md:mt-0">
+             <p className="text-zinc-500 max-w-xs text-sm">Atuamos em todas as etapas da construção da sua página de vendas.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-zinc-800 border border-zinc-800">
+          <!-- Item 1 -->
+          <div class="bg-pz-black p-10 hover:bg-zinc-900/50 transition-colors group">
+            <div class="mb-8 opacity-50 group-hover:opacity-100 transition-opacity">
+              <i data-lucide="layout" class="text-white w-8 h-8"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-4">UI & Web Design</h4>
+            <p class="text-zinc-500 text-sm leading-relaxed">Criação visual completa. Pensamos na hierarquia das informações, cores, tipografia e imagens para transmitir autoridade imediata.</p>
+          </div>
+          <!-- Item 2 -->
+          <div class="bg-pz-black p-10 hover:bg-zinc-900/50 transition-colors group">
+            <div class="mb-8 opacity-50 group-hover:opacity-100 transition-opacity">
+              <i data-lucide="pen-tool" class="text-white w-8 h-8"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-4">Copywriting Estratégico</h4>
+            <p class="text-zinc-500 text-sm leading-relaxed">Não é apenas escrever, é persuadir. Estruturamos os textos da sua página focados em quebrar objeções e levar ao clique.</p>
+          </div>
+          <!-- Item 3 -->
+          <div class="bg-pz-black p-10 hover:bg-zinc-900/50 transition-colors group">
+            <div class="mb-8 opacity-50 group-hover:opacity-100 transition-opacity">
+              <i data-lucide="monitor" class="text-white w-8 h-8"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-4">Otimização Responsiva</h4>
+            <p class="text-zinc-500 text-sm leading-relaxed">Sua página perfeita em qualquer dispositivo. Focamos obsessivamente na experiência mobile, de onde vem a maioria das vendas.</p>
+          </div>
+          <!-- Item 4 -->
+          <div class="bg-pz-black p-10 hover:bg-zinc-900/50 transition-colors group">
+            <div class="mb-8 opacity-50 group-hover:opacity-100 transition-opacity">
+              <i data-lucide="code" class="text-white w-8 h-8"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-4">Implementação</h4>
+            <p class="text-zinc-500 text-sm leading-relaxed">Entregamos o arquivo JSON (Elementor) ou HTML pronto. Você só precisa subir no seu domínio. Sem dores de cabeça com código.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="py-24 bg-pz-black">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+          <h2 class="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-4">Portfólio & Estilo</h2>
+          <h3 class="text-3xl md:text-4xl font-black text-white">Simplicidade que vende.</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="group cursor-default">
+            <div class="aspect-[4/5] bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden relative mb-4">
+              <div class="absolute inset-0 bg-gradient-to-tr from-zinc-800 to-black p-8 flex flex-col justify-center items-center">
+                 <div class="w-3/4 h-4 bg-zinc-700 rounded-full mb-4 opacity-50"></div>
+                 <div class="w-1/2 h-4 bg-zinc-800 rounded-full mb-12 opacity-30"></div>
+                 <div class="w-full h-32 bg-zinc-800/50 rounded border border-white/5 mb-4 backdrop-blur-sm"></div>
+                 <div class="w-full flex gap-2">
+                    <div class="w-1/2 h-20 bg-zinc-800/30 rounded"></div>
+                    <div class="w-1/2 h-20 bg-zinc-800/30 rounded"></div>
+                 </div>
+              </div>
+              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="text-white text-sm font-bold tracking-widest uppercase border border-white px-4 py-2">Nicho: Renda Extra</span>
+              </div>
+            </div>
+            <h4 class="text-white font-bold">Dark High-Ticket</h4>
+            <p class="text-zinc-500 text-sm">Ideal para PLR e Infoprodutos.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group cursor-default md:mt-12">
+            <div class="aspect-[4/5] bg-zinc-100 border border-zinc-200 rounded-lg overflow-hidden relative mb-4">
+               <div class="absolute inset-0 bg-gradient-to-b from-white to-gray-100 p-8 flex flex-col items-center pt-16">
+                 <div class="w-16 h-16 rounded-full bg-gray-200 mb-6"></div>
+                 <div class="w-full h-2 bg-gray-300 rounded mb-2"></div>
+                 <div class="w-2/3 h-2 bg-gray-300 rounded mb-8"></div>
+                 <div class="w-full aspect-video bg-white shadow-lg rounded border border-gray-100"></div>
+              </div>
+               <div class="absolute inset-0 bg-white/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="text-black text-sm font-bold tracking-widest uppercase border border-black px-4 py-2">Nicho: Saúde/Beleza</span>
+              </div>
+            </div>
+            <h4 class="text-white font-bold">Clean Minimalist</h4>
+            <p class="text-zinc-500 text-sm">Foco em imagem e clareza.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="group cursor-default">
+            <div class="aspect-[4/5] bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden relative mb-4">
+               <div class="absolute inset-0 bg-zinc-900 p-6 flex flex-col justify-between">
+                  <div class="w-full h-8 bg-red-600/20 border border-red-600/30 rounded flex items-center justify-center text-red-500 text-xs font-bold uppercase">Oferta Exclusiva</div>
+                  <div class="space-y-2">
+                    <div class="w-full h-2 bg-zinc-700 rounded"></div>
+                    <div className="w-full h-2 bg-zinc-700 rounded"></div>
+                    <div class="w-full h-2 bg-zinc-700 rounded"></div>
+                  </div>
+                  <div class="w-full py-3 bg-white rounded flex justify-center items-center">
+                    <div class="w-24 h-2 bg-black rounded"></div>
+                  </div>
+              </div>
+              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="text-white text-sm font-bold tracking-widest uppercase border border-white px-4 py-2">Nicho: Oferta Direta</span>
+              </div>
+            </div>
+            <h4 class="text-white font-bold">Hard Sell</h4>
+            <p class="text-zinc-500 text-sm">Focado em conversão agressiva.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="investimento" class="py-24 bg-pz-black border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-7">
+            <h2 class="text-4xl font-bold text-white mb-6">Investimento Único. <br/>Sem surpresas.</h2>
+            <p class="text-lg text-zinc-400 mb-8 max-w-xl">
+              Simplificamos o processo de contratação. Um único pacote que inclui tudo o que você precisa para validar seu produto e começar a vender.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Feature List -->
+              <div class="flex items-center gap-3 border border-zinc-800 p-3 rounded bg-zinc-900/20">
+                <i data-lucide="check" class="text-white w-4 h-4"></i>
+                <span class="text-zinc-300 text-sm">Design Exclusivo</span>
+              </div>
+              <div class="flex items-center gap-3 border border-zinc-800 p-3 rounded bg-zinc-900/20">
+                <i data-lucide="check" class="text-white w-4 h-4"></i>
+                <span class="text-zinc-300 text-sm">Copywriting Profissional</span>
+              </div>
+              <div class="flex items-center gap-3 border border-zinc-800 p-3 rounded bg-zinc-900/20">
+                <i data-lucide="check" class="text-white w-4 h-4"></i>
+                <span class="text-zinc-300 text-sm">Versão Mobile/Desktop</span>
+              </div>
+              <div class="flex items-center gap-3 border border-zinc-800 p-3 rounded bg-zinc-900/20">
+                <i data-lucide="check" class="text-white w-4 h-4"></i>
+                <span class="text-zinc-300 text-sm">Arquivo JSON/HTML</span>
+              </div>
+              <div class="flex items-center gap-3 border border-zinc-800 p-3 rounded bg-zinc-900/20">
+                <i data-lucide="check" class="text-white w-4 h-4"></i>
+                <span class="text-zinc-300 text-sm">Suporte na Instalação</span>
+              </div>
+              <div class="flex items-center gap-3 border border-zinc-800 p-3 rounded bg-zinc-900/20">
+                <i data-lucide="check" class="text-white w-4 h-4"></i>
+                <span class="text-zinc-300 text-sm">Entrega em 48h</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="bg-white text-black p-8 md:p-12 rounded-2xl relative overflow-hidden">
+               <div class="absolute top-0 right-0 p-4">
+                 <div class="bg-black text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Launch Pack</div>
+               </div>
+              
+              <div class="mb-8">
+                <span class="text-zinc-500 text-sm font-medium uppercase tracking-widest block mb-2">Valor Total</span>
+                <div class="text-6xl font-black tracking-tighter">
+                  R$49
+                </div>
+              </div>
+
+              <div class="space-y-4 mb-8 border-t border-gray-200 pt-6">
+                <p class="text-sm text-gray-600 font-medium">Ideal para:</p>
+                <ul class="space-y-2 text-gray-800 text-sm">
+                  <li>• Afiliados iniciantes</li>
+                  <li>• Teste de novos produtos</li>
+                  <li>• Prestadores de serviço locais</li>
+                </ul>
+              </div>
+
+              <!-- CTA REMOVIDO E SUBSTITUÍDO POR INFO -->
+              <div class="w-full bg-zinc-100 text-zinc-500 font-medium text-sm py-4 px-6 rounded-xl flex items-center justify-center gap-2 border border-zinc-200">
+                <i data-lucide="lock" class="w-4 h-4"></i>
+                Pagamento único. Sem mensalidades.
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-24 bg-pz-black border-t border-white/5">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Dúvidas Frequentes</h2>
+          <p class="text-zinc-400">
+            Tudo o que você precisa saber antes de fechar sua página.
+          </p>
+        </div>
+
+        <div class="space-y-4" id="faq-container">
+          <!-- FAQ Items generated by HTML directly -->
+          <div class="faq-item border border-zinc-800 rounded-lg bg-zinc-900/20 overflow-hidden transition-all hover:border-zinc-700">
+            <button class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none">
+              <span class="font-bold text-white text-lg">O que exatamente eu recebo?</span>
+              <i data-lucide="plus" class="text-zinc-400 flex-shrink-0 icon-toggle"></i>
+            </button>
+            <div class="faq-content max-h-0 px-6 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="leading-relaxed text-sm md:text-base border-t border-white/5 py-4 text-zinc-400">
+                Você recebe uma Landing Page completa, com design profissional e copy (texto) persuasiva, pronta para vender. Entregamos o arquivo pronto para você subir na sua estrutura (WordPress/Elementor) ou o código HTML, dependendo da sua preferência.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item border border-zinc-800 rounded-lg bg-zinc-900/20 overflow-hidden transition-all hover:border-zinc-700">
+            <button class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none">
+              <span class="font-bold text-white text-lg">Preciso ter domínio e hospedagem?</span>
+              <i data-lucide="plus" class="text-zinc-400 flex-shrink-0 icon-toggle"></i>
+            </button>
+            <div class="faq-content max-h-0 px-6 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="leading-relaxed text-sm md:text-base border-t border-white/5 py-4 text-zinc-400">
+                Sim! A Ponto Zero cria a página, mas ela precisa morar na internet. Você precisa ter contratado um domínio (ex: seunome.com.br) e uma hospedagem. Se não souber como, nós te orientamos no processo.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item border border-zinc-800 rounded-lg bg-zinc-900/20 overflow-hidden transition-all hover:border-zinc-700">
+            <button class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none">
+              <span class="font-bold text-white text-lg">Serve para qualquer nicho?</span>
+              <i data-lucide="plus" class="text-zinc-400 flex-shrink-0 icon-toggle"></i>
+            </button>
+            <div class="faq-content max-h-0 px-6 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="leading-relaxed text-sm md:text-base border-t border-white/5 py-4 text-zinc-400">
+                Absolutamente. Criamos páginas para emagrecimento, renda extra, encapsulados, cursos profissionalizantes, ebooks e serviços locais. Adaptamos a comunicação para o seu público.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item border border-zinc-800 rounded-lg bg-zinc-900/20 overflow-hidden transition-all hover:border-zinc-700">
+            <button class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none">
+              <span class="font-bold text-white text-lg">Quanto tempo demora para ficar pronta?</span>
+              <i data-lucide="plus" class="text-zinc-400 flex-shrink-0 icon-toggle"></i>
+            </button>
+            <div class="faq-content max-h-0 px-6 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="leading-relaxed text-sm md:text-base border-t border-white/5 py-4 text-zinc-400">
+                Nosso prazo médio é de 48 horas úteis após o envio das informações do seu produto. Trabalhamos com agilidade porque sabemos que você tem pressa para começar a anunciar.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item border border-zinc-800 rounded-lg bg-zinc-900/20 overflow-hidden transition-all hover:border-zinc-700">
+            <button class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none">
+              <span class="font-bold text-white text-lg">Vocês fazem o tráfego (anúncios) também?</span>
+              <i data-lucide="plus" class="text-zinc-400 flex-shrink-0 icon-toggle"></i>
+            </button>
+            <div class="faq-content max-h-0 px-6 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="leading-relaxed text-sm md:text-base border-t border-white/5 py-4 text-zinc-400">
+                Não. Nosso foco é exclusivo na estrutura (Landing Page). Nós deixamos a 'loja' pronta para vender, mas é você quem traz os clientes através do tráfego (Facebook Ads, Google Ads, TikTok, etc).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-pz-black border-t border-zinc-900 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+             <span class="text-2xl font-black tracking-tighter text-white">
+                PONTO<span class="text-zinc-500">ZERO</span>.
+              </span>
+             <p class="text-zinc-500 text-sm mt-2">Todo afiliado começa aqui.</p>
+          </div>
+          
+          <div class="flex space-x-6">
+            <a href="#" class="text-zinc-500 hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
+            <a href="#" class="text-zinc-500 hover:text-white transition-colors"><i data-lucide="twitter"></i></a>
+            <a href="#" class="text-zinc-500 hover:text-white transition-colors"><i data-lucide="mail"></i></a>
+          </div>
+        </div>
+        
+        <div class="mt-8 border-t border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-zinc-600">
+          <p>&copy; <span id="year"></span> Ponto Zero. Todos os direitos reservados.</p>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+            <a href="#" class="hover:text-zinc-400">Termos de Uso</a>
+            <a href="#" class="hover:text-zinc-400">Privacidade</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- INTERACTION SCRIPTS -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Current Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile Menu Logic
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+      const menuIcon = document.getElementById('menu-icon');
+      let isMenuOpen = false;
+
+      function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.setAttribute('data-lucide', 'x');
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuIcon.setAttribute('data-lucide', 'menu');
+        }
+        lucide.createIcons(); // Re-render icons after change
+      }
+
+      menuBtn.addEventListener('click', toggleMenu);
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (isMenuOpen) toggleMenu();
+        });
+      });
+
+      // FAQ Accordion Logic
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        const button = item.querySelector('button');
+        const content = item.querySelector('.faq-content');
+        const icon = item.querySelector('.icon-toggle');
+
+        button.addEventListener('click', () => {
+          const isOpen = !content.classList.contains('max-h-0');
+
+          // Close all others (Accordion behavior - optional, but cleaner)
+          faqItems.forEach(otherItem => {
+            const otherContent = otherItem.querySelector('.faq-content');
+            const otherIcon = otherItem.querySelector('.icon-toggle');
+            if (otherItem !== item) {
+              otherContent.classList.add('max-h-0');
+              otherIcon.setAttribute('data-lucide', 'plus');
+            }
+          });
+
+          if (isOpen) {
+            content.classList.add('max-h-0');
+            icon.setAttribute('data-lucide', 'plus');
+          } else {
+            content.classList.remove('max-h-0');
+            icon.setAttribute('data-lucide', 'minus');
+          }
+          lucide.createIcons();
+        });
+      });
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

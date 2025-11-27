@@ -1,0 +1,9 @@
+{
+  "name": "ponto-zero-static",
+  "version": "1.0.0",
+  "description": "Static version",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
