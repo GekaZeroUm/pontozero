@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ponto Zero | Todo afiliado começa aqui</title>
     
-    <!-- Tailwind CSS (via CDN para simplicidade) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
@@ -36,7 +33,6 @@
         background-color: #050505;
         color: #e5e5e5;
       }
-      /* Ajuste para garantir que o scroll pare antes do cabeçalho fixo */
       section {
         scroll-margin-top: 5rem;
       }
@@ -54,7 +50,6 @@
 </head>
   <body class="selection:bg-white selection:text-black font-sans">
 
-    <!-- HEADER -->
     <nav class="fixed w-full z-50 top-0 bg-pz-black/80 backdrop-blur-xl border-b border-white/5">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
@@ -84,7 +79,6 @@
         </div>
       </div>
 
-      <!-- Mobile Menu -->
       <div id="mobile-menu" class="hidden md:hidden bg-pz-black border-b border-zinc-800">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <a href="#sobre" class="mobile-link text-zinc-300 hover:text-white block px-3 py-4 text-base font-medium border-b border-zinc-900 last:border-0">Sobre</a>
@@ -95,13 +89,10 @@
       </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section class="relative min-h-[90vh] flex items-center bg-pz-black border-b border-white/5 overflow-hidden">
-      <!-- Abstract Background -->
       <div class="absolute inset-0 w-full h-full opacity-30 pointer-events-none">
         <div class="absolute right-0 top-0 w-[500px] h-[500px] bg-gradient-to-b from-zinc-800 to-transparent rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
         <div class="absolute left-0 bottom-0 w-[500px] h-[500px] bg-gradient-to-t from-zinc-900 to-transparent rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2"></div>
-        <!-- Grid Pattern -->
         <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       </div>
 
@@ -132,7 +123,6 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
     <section id="sobre" class="py-24 bg-pz-black relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -178,7 +168,6 @@
       </div>
     </section>
 
-    <!-- SERVICES SECTION -->
     <section id="servicos" class="py-24 bg-pz-dark border-y border-zinc-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-16 md:flex md:justify-between md:items-end">
@@ -192,7 +181,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-zinc-800 border border-zinc-800">
-          <!-- Item 1 -->
           <div class="bg-pz-black p-10 hover:bg-zinc-900/50 transition-colors group">
             <div class="mb-8 opacity-50 group-hover:opacity-100 transition-opacity">
               <i data-lucide="layout" class="text-white w-8 h-8"></i>
@@ -200,7 +188,6 @@
             <h4 class="text-xl font-bold text-white mb-4">UI & Web Design</h4>
             <p class="text-zinc-500 text-sm leading-relaxed">Criação visual completa. Pensamos na hierarquia das informações, cores, tipografia e imagens para transmitir autoridade imediata.</p>
           </div>
-          <!-- Item 2 -->
           <div class="bg-pz-black p-10 hover:bg-zinc-900/50 transition-colors group">
             <div class="mb-8 opacity-50 group-hover:opacity-100 transition-opacity">
               <i data-lucide="pen-tool" class="text-white w-8 h-8"></i>
@@ -208,7 +195,6 @@
             <h4 class="text-xl font-bold text-white mb-4">Copywriting Estratégico</h4>
             <p class="text-zinc-500 text-sm leading-relaxed">Não é apenas escrever, é persuadir. Estruturamos os textos da sua página focados em quebrar objeções e levar ao clique.</p>
           </div>
-          <!-- Item 3 -->
           <div class="bg-pz-black p-10 hover:bg-zinc-900/50 transition-colors group">
             <div class="mb-8 opacity-50 group-hover:opacity-100 transition-opacity">
               <i data-lucide="monitor" class="text-white w-8 h-8"></i>
@@ -216,7 +202,6 @@
             <h4 class="text-xl font-bold text-white mb-4">Otimização Responsiva</h4>
             <p class="text-zinc-500 text-sm leading-relaxed">Sua página perfeita em qualquer dispositivo. Focamos obsessivamente na experiência mobile, de onde vem a maioria das vendas.</p>
           </div>
-          <!-- Item 4 -->
           <div class="bg-pz-black p-10 hover:bg-zinc-900/50 transition-colors group">
             <div class="mb-8 opacity-50 group-hover:opacity-100 transition-opacity">
               <i data-lucide="code" class="text-white w-8 h-8"></i>
@@ -228,7 +213,6 @@
       </div>
     </section>
 
-    <!-- PORTFOLIO SECTION -->
     <section id="portfolio" class="py-24 bg-pz-black">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-12">
@@ -237,7 +221,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Card 1 -->
           <div class="group cursor-default">
             <div class="aspect-[4/5] bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden relative mb-4">
               <div class="absolute inset-0 bg-gradient-to-tr from-zinc-800 to-black p-8 flex flex-col justify-center items-center">
@@ -257,7 +240,6 @@
             <p class="text-zinc-500 text-sm">Ideal para PLR e Infoprodutos.</p>
           </div>
 
-          <!-- Card 2 -->
           <div class="group cursor-default md:mt-12">
             <div class="aspect-[4/5] bg-zinc-100 border border-zinc-200 rounded-lg overflow-hidden relative mb-4">
                <div class="absolute inset-0 bg-gradient-to-b from-white to-gray-100 p-8 flex flex-col items-center pt-16">
@@ -274,7 +256,6 @@
             <p class="text-zinc-500 text-sm">Foco em imagem e clareza.</p>
           </div>
 
-          <!-- Card 3 -->
           <div class="group cursor-default">
             <div class="aspect-[4/5] bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden relative mb-4">
                <div class="absolute inset-0 bg-zinc-900 p-6 flex flex-col justify-between">
@@ -299,7 +280,6 @@
       </div>
     </section>
 
-    <!-- PRICING SECTION -->
     <section id="investimento" class="py-24 bg-pz-black border-t border-white/5">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -360,7 +340,6 @@
                 </ul>
               </div>
 
-              <!-- CTA REMOVIDO E SUBSTITUÍDO POR INFO -->
               <div class="w-full bg-zinc-100 text-zinc-500 font-medium text-sm py-4 px-6 rounded-xl flex items-center justify-center gap-2 border border-zinc-200">
                 <i data-lucide="lock" class="w-4 h-4"></i>
                 Pagamento único. Sem mensalidades.
@@ -372,8 +351,6 @@
         </div>
       </div>
     </section>
-
-    <!-- FAQ SECTION -->
     <section id="faq" class="py-24 bg-pz-black border-t border-white/5">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -384,7 +361,6 @@
         </div>
 
         <div class="space-y-4" id="faq-container">
-          <!-- FAQ Items generated by HTML directly -->
           <div class="faq-item border border-zinc-800 rounded-lg bg-zinc-900/20 overflow-hidden transition-all hover:border-zinc-700">
             <button class="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none">
               <span class="font-bold text-white text-lg">O que exatamente eu recebo?</span>
@@ -428,7 +404,7 @@
             </button>
             <div class="faq-content max-h-0 px-6 overflow-hidden transition-all duration-300 ease-in-out">
               <p class="leading-relaxed text-sm md:text-base border-t border-white/5 py-4 text-zinc-400">
-                Nosso prazo médio é de 48 horas úteis após o envio das informações do seu produto. Trabalhamos com agilidade porque sabemos que você tem pressa para começar a anunciar.
+                Nosso prazo médio é de 72 horas úteis após o envio das informações do seu produto. Trabalhamos com agilidade porque sabemos que você tem pressa para começar a anunciar.
               </p>
             </div>
           </div>
@@ -448,7 +424,6 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-pz-black border-t border-zinc-900 py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
@@ -476,15 +451,11 @@
       </div>
     </footer>
 
-    <!-- INTERACTION SCRIPTS -->
     <script>
-      // Initialize Lucide Icons
       lucide.createIcons();
 
-      // Current Year
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Mobile Menu Logic
       const menuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
       const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -500,7 +471,7 @@
           mobileMenu.classList.add('hidden');
           menuIcon.setAttribute('data-lucide', 'menu');
         }
-        lucide.createIcons(); // Re-render icons after change
+        lucide.createIcons();
       }
 
       menuBtn.addEventListener('click', toggleMenu);
@@ -511,7 +482,6 @@
         });
       });
 
-      // FAQ Accordion Logic
       const faqItems = document.querySelectorAll('.faq-item');
 
       faqItems.forEach(item => {
@@ -522,7 +492,6 @@
         button.addEventListener('click', () => {
           const isOpen = !content.classList.contains('max-h-0');
 
-          // Close all others (Accordion behavior - optional, but cleaner)
           faqItems.forEach(otherItem => {
             const otherContent = otherItem.querySelector('.faq-content');
             const otherIcon = otherItem.querySelector('.icon-toggle');
